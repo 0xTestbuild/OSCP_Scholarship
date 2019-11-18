@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>OSCP Scholarship Essay : The Nefarious Padding Oracle Attack</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">OSCP Scholarship Essay : The Nefarious Padding Oracle Attack</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Sponsored by: Rob Fuller (Twitter: @mubix)  | Created by Darold Kelly Jr.
+</section>
+<section data-field="body" class="e-content">
+<section name="3add" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="81c0" id="81c0" class="graf graf--h3 graf--leading graf--title">OSCP Scholarship Essay : The Nefarious Padding Oracle Attack</h3><p name="e27d" id="e27d" class="graf graf--p graf-after--h3">Sponsored by: <a href="https://medium.com/u/ec8acbed835b" data-href="https://medium.com/u/ec8acbed835b" data-anchor-type="2" data-user-id="ec8acbed835b" data-action-value="ec8acbed835b" data-action="show-user-card" data-action-type="hover" class="markup--user markup--p-user" target="_blank">Rob Fuller</a> (Twitter: @mubix)  | Created by Darold Kelly Jr. </p><h3 name="3bc0" id="3bc0" class="graf graf--h3 graf-after--p"><strong class="markup--strong markup--h3-strong">Introduction</strong></h3><p name="362f" id="362f" class="graf graf--p graf-after--h3">Encryption, as we all may know, is a method used to obfuscate (or hide) data. The Padding Oracle Attack is a method used to decode an encryption technique known as Cipher Block Chaining, or CBC for short. The CBC encryption method works very much like a chain: plain text is divided up into blocks, or “chain links”, and used to secure the next block or chain link. </p><figure name="0587" id="0587" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 480px; max-height: 368px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 76.7%;"></div><img class="graf-image" data-image-id="1*4xIu2v12s10fdT0OGhMSSQ.gif" data-width="480" data-height="368" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*4xIu2v12s10fdT0OGhMSSQ.gif"></div><figcaption class="imageCaption">Endless CBC Encryption! </figcaption></figure><p name="21c0" id="21c0" class="graf graf--p graf-after--figure">The logic behind the encryption method may seem complex, but it is actually very simple. You begin with some text. Technical specialists call this the “initialization vector”, but we will refer to it as the first link in the chain. This chain link, just like everything inside the computer, is represented with a combination of 1&#39;s and 0’s. We perform an operation called XOR on these bits with the next link in the chain (which will be the first block of the message we want to encrypt)  before before sending it through another encryption method. The encryption produces the coded message to be used in the encryption of the next text block. It’s like locking the key to a safe inside of another safe! </p><figure name="9e49" id="9e49" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 480px; max-height: 360px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 75%;"></div><img class="graf-image" data-image-id="1*Gl-yfUSOcB8Z7BfmsJtwmA.gif" data-width="480" data-height="360" src="https://cdn-images-1.medium.com/max/800/1*Gl-yfUSOcB8Z7BfmsJtwmA.gif"></div><figcaption class="imageCaption">I locked the key to my safe inside of ANOTHER safe. I am SECURED!! </figcaption></figure><p name="3f70" id="3f70" class="graf graf--p graf-after--figure">This encryption method, while effective, can be easily be broken if not coded correctly. Let us introduce the Padding Oracle attack! The encryption method is easy, but the attack is difficult. We start by going into a deep analysis and understanding of how the code works. Endless youtube videos, countless searches on Google, and many hours of code later, I finally got made it to a solution. </p><p name="ba36" id="ba36" class="graf graf--p graf-after--p">Each block of the chain is 16 inches long, which required me learn about complex <a href="https://tools.ietf.org/html/rfc2898" data-href="https://tools.ietf.org/html/rfc2898" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">encryption standards</a>. The cyber-security geeks may get a kick out of hiding simple concepts really love complex  text and diagrams, but that was not going to stop me.</p><figure name="0f78" id="0f78" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 478px; max-height: 298px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 62.3%;"></div><img class="graf-image" data-image-id="1*XrDdimEYpSPBtJ73hkZJmg.gif" data-width="478" data-height="298" src="https://cdn-images-1.medium.com/max/800/1*XrDdimEYpSPBtJ73hkZJmg.gif"></div></figure><p name="dc0c" id="dc0c" class="graf graf--p graf-after--figure">Padding is a concept that allows a message to reach the intended length. The CBC method only works when the chain link is divisible by 16. What if your message isn’t the the size needed to encrypt the message? This is where padding comes in. Padding essentially adds data to the end of a message in order to make it compatible with the length requirements to play nicely with the other portions of the code. </p><p name="9527" id="9527" class="graf graf--p graf-after--p">Put simply, it provide a neat and organized layer of protection makes life a lot easier because it makes code more reusable and universal while making the data much easier to manage. This feature, however, introduces a vulnerability that can be exploited. </p><p name="83e9" id="83e9" class="graf graf--p graf-after--p">The attack essentially changes the last bit in order to see what happens. </p><figure name="9758" id="9758" class="graf graf--figure graf-after--p"><div class="aspectRatioPlaceholder is-locked" style="max-width: 531px; max-height: 222px;"><div class="aspectRatioPlaceholder-fill" style="padding-bottom: 41.8%;"></div><img class="graf-image" data-image-id="1*6JyGWmJw8faT2CwtdGv1LQ.gif" data-width="531" data-height="222" src="https://cdn-images-1.medium.com/max/800/1*6JyGWmJw8faT2CwtdGv1LQ.gif"></div></figure><p name="748c" id="748c" class="graf graf--p graf-after--figure">Code Source: <a href="https://github.com/test-build/OSCP_Scholarship" data-href="https://github.com/test-build/OSCP_Scholarship" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">https://github.com/test-build/OSCP_Scholarship</a></p><p name="d2ff" id="d2ff" class="graf graf--p graf-after--p graf--trailing">(Just incase you want to see the attack in action! ) </p></div></div></section>
+</section>
+<footer><p><a href="https://medium.com/p/d58ba2d26cdb">View original.</a></p><p>Exported from <a href="https://medium.com">Medium</a> on November 18, 2019.</p></footer></article></body></html>
